@@ -1,3 +1,4 @@
+/*eslint no-underscore-dangle: 0*/
 'use strict';
 var stream = require('stream');
 var test = require('tape');
