@@ -1,22 +1,20 @@
+/*eslint no-underscore-dangle: 0*/
 'use strict';
-
-var stream = require('stream');
+var stream = require('readable-stream');
 var util = require('util');
 
-function LabelStream(options) {
-	if (!(this instanceof LabelStream)) {return new LabelStream(options);}
+util.inherits(TextContentStream, stream.Writable);
+function TextContentStream(options) {
+  if (!(this instanceof TextContentStream)) return new TextContentStream(options);
+
   this.element = options.element;
 
-  stream.Writable.call(this, options);
+  stream.Writable.call(this, this.options);
 }
-util.inherits(LabelStream, stream.Writable);
 
-
-//In label-steam.js module
-LabelStream.prototype._write = function(chunk, enc, cb) {
+TextContentStream.prototype._write = function(chunk, enc, cb) {
   this.element.textContent = chunk.toString();
-
   cb();
 };
 
-module.exports = LabelStream;
+module.exports = TextContentStream;
