@@ -1,6 +1,6 @@
 {
   "name": "text-content-stream",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Pipe a stream into a HTML element, overwriting textContent with the latest chunk",
   "main": "index.js",
   "scripts": {
