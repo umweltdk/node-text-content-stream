@@ -6,7 +6,8 @@
   "scripts": {
     "test": "npm run lint && npm run zuul",
     "lint": "eslint --ignore-path .gitignore .",
-    "zuul": "zuul -- test.js"
+    "zuul": "zuul -- test.js",
+    "zuul-local": "zuul --local 8080 -- test.js"
   },
   "repository": {
     "type": "git",
