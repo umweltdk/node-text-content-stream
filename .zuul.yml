@@ -14,6 +14,6 @@ browsers:
   - name: android
     version: 4.0..latest
   - name: opera
-    version: 26..latest
+    version: 11..latest
   - name: safari
-    version: 5.1..latest
+    version: 5..latest
