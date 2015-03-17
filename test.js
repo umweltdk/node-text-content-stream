@@ -23,6 +23,6 @@ test('updates text', function(t) {
 
   ctnStream.pipe(destStream);
   ctnStream.on('data', function(chunk) {
-    t.ok(elm.textContent === chunk.toString(), 'check element is updated');
+    t.equal(elm.textContent, chnk.toString(), 'check element is updated');
   });
 });
