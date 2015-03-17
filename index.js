@@ -10,7 +10,7 @@ function TextContentStream(options) {
 
   this.element = options.element;
 
-  stream.Writable.call(this, this.options);
+  stream.Writable.call(this, options);
 }
 
 TextContentStream.prototype._write = function(chunk, enc, cb) {
