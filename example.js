@@ -1,9 +1,11 @@
+/*eslint no-underscore-dangle: 0*/
+'use strict';
 var stream = require('stream');
 
 var dataStream = new stream.Readable();
 dataStream._read = function() {
   this.push('' + Math.random());
-}
+};
 
 
 
