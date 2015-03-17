@@ -2,7 +2,8 @@ text-content-stream [![Build Status][1]][2]
 =======================================
 [![NPM][3]][4]
 
-Pipe a stream into a HTML element, overwriting textContent with the latest chunk
+Pipe a stream into a HTML element, overwriting textContent with the latest chunk.
+A new animation frame is requested on each write as to not choke the browser.
 
 Usage
 -----

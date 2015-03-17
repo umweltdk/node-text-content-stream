@@ -2,6 +2,7 @@
 'use strict';
 var stream = require('readable-stream');
 var util = require('util');
+var raf = require('raf');
 
 util.inherits(TextContentStream, stream.Writable);
 function TextContentStream(options) {
@@ -13,8 +14,10 @@ function TextContentStream(options) {
 }
 
 TextContentStream.prototype._write = function(chunk, enc, cb) {
-  this.element.textContent = chunk.toString();
-  cb();
+  raf(function() {
+    this.element.textContent = chunk.toString();
+    cb();
+  }.bind(this));
 };
 
 module.exports = TextContentStream;
