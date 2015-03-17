@@ -7,13 +7,23 @@ A new animation frame is requested on each write as to not choke the browser.
 
 Usage
 -----
-
+[`example.js`](example.js):
 ```js
+var stream = require('stream');
+
+var dataStream = new stream.Readable();
+dataStream._read = function() {
+  this.push('' + Math.random());
+}
+
+
+var document = require('global/document');
 var textContentStream = require('text-content-stream');
 
-someSourceStream.pipe(textContentStream({
-  element: document.querySelector('#label')
-}));
+var elm = document.createElement('span');
+document.body.appendChild(elm);
+
+dataStream.pipe(textContentStream({element: elm}));
 ```
 
 License
